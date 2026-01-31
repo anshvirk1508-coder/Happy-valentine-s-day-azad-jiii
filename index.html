@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Azad Jiii 💖 </title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffdde1;}
+
+/* PASSWORD SCREEN */
+#lockScreen{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  background:linear-gradient(#ff758c,#ff7eb3);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  z-index:9999;
+  overflow:hidden;
+}
+
+#lockScreen input{
+  padding:15px;
+  border:none;
+  border-radius:20px;
+  font-size:18px;
+  text-align:center;
+  margin-top:15px;
+  outline:none;
+}
+
+#lockScreen button{
+  margin-top:15px;
+  padding:12px 28px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+}
+
+/* PAGE 1 */
+.page1{
+  width:100%;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:white;
+  background: linear-gradient(120deg, #ff9a9e, #fad0c4);
+  overflow:hidden;
+  padding:30px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:20px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.5em;
+  line-height:2;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:12px 28px;
+  border:none;
+  border-radius:25px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD SCREEN -->
+<div id="lockScreen">
+  <h1>Private Access 🔐</h1>
+  <p>Enter the password to see your Valentine surprise</p>
+  <input type="password" id="password" placeholder="Enter Password">
+  <button onclick="unlock()">Enter 💖</button>
+  <p id="error" style="margin-top:10px;color:#ffe6ea;"></p>
+</div>
+
+<!-- PAGE 1 -->
+<div class="page1" style="display:none;">
+  <h1>Hello Azad 💖</h1>
+  <p>
+    Today is a very special day, and I wanted to create something that truly shows how much you mean to me.  
+    Every heartbeat, every smile, and every little thought I have revolves around you.  
+    I wanted to capture all those little things in words, so even when we are apart, you can feel me close to you.
+  </p>
+  <p>
+    From the very first time we spoke, I knew there was something magical about you.  
+    The way you laugh, the way you care, the way you make every moment brighter – it all fills my heart with happiness.  
+    I could write endless words, yet none would be enough to describe the warmth and joy you bring into my life.
+  </p>
+  <p>
+    Imagine us walking together under the stars, sharing secrets, dreams, and little silly jokes that only we understand.  
+    Every memory with you is like a little treasure, a moment I want to keep forever.  
+    You are my inspiration, my calm, my favorite person, and my forever happiness.
+  </p>
+  <p>
+    I hope when you read these words, you can feel the love and care I poured into them.  
+    This is only the beginning of so many more stories, laughter, and unforgettable moments that we’ll create together.  
+    Thank you for being you, for being mine, and for making my world infinitely brighter.
+  </p>
+  <div>
+    <button onclick="goToNext()">Next Page ➜</button>
+    <button onclick="goBack()">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const colors=['❤️','💖','🌹','💕','✨'];
+for(let i=0;i<35;i++){
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,45)+'px';
+  heart.innerText=colors[randomInt(0,colors.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+}
+
+const hearts = document.querySelectorAll('.heart');
+hearts.forEach(h=>{
+  h.style.top=randomInt(100,120)+'vh';
+});
+
+// Buttons (for now, alerts; will link to next page later)
+function goToNext(){alert("Next page will come here 😘");}
+function goBack(){alert("Back action here 😏");}
+
+// PASSWORD UNLOCK
+function unlock(){
+  const pass = document.getElementById("password").value;
+  const correct = "24 September 2025"; // your password
+  if(pass===correct){
+    document.getElementById("lockScreen").style.display="none";
+    document.querySelector('.page1').style.display="flex";
+  } else {
+    document.getElementById("error").innerText="Wrong password. Try again.";
+  }
+}
+</script>
+</body>
+  </html>
