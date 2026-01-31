@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Memories 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe6f0;}
+
+/* PAGE 4 */
+.page4{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffd1dc, #ffc0e0);
+  overflow:hidden;
+  padding:50px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:30px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.5em;
+  line-height:2;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:15px;
+  padding:15px 45px;
+  border:none;
+  border-radius:35px;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+#response{
+  font-size:1.8em;
+  margin-top:25px;
+  color:#ff4d6d;
+  display:none;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page4">
+  <h1>Our Special Moments 🌸💖</h1>
+  <p>
+    Thinking about all the moments we've shared together makes my heart flutter with joy.  
+    Every laugh, every silly conversation, every time we just looked at each other and felt connected — it all means so much to me.  
+    Even the tiniest memories feel like treasures, and I keep them safe in my heart forever.
+  </p>
+  <p>
+    Remember those late-night calls when we couldn’t stop talking, sharing our dreams, fears, and hopes?  
+    Even when we were miles apart, it felt like you were right beside me, holding my hand.  
+    Every message from you brightens my day, every thought of you makes me smile uncontrollably.
+  </p>
+  <p>
+    I love how we’ve built our little world together — a world full of laughter, secrets, silly jokes, and endless care.  
+    You make ordinary days extraordinary, and I can’t imagine life without your love and warmth.  
+    Even in silence, I feel your presence and your love wrapping me like a cozy blanket.
+  </p>
+  <p>
+    As we continue our journey, I dream of all the adventures we’ll have, all the memories we’ll create, and all the love we’ll share.  
+    You are my calm in chaos, my sunshine on cloudy days, my forever favorite person.  
+    My heart feels complete because you are in it, and I hope you feel the same way too.
+  </p>
+  <p>
+    No matter where life takes us, I know that what we share is special and unbreakable.  
+    Distance, time, challenges — nothing can change the bond we have.  
+    I promise to always care for you, laugh with you, and be there for you, just as you’ve done for me.
+  </p>
+  <p>
+    Thank you for being you, for being mine, and for making my world brighter every single day.  
+    You are my sweetest memory, my happiest thought, and my most beautiful dream come true, Azad 💖🌹✨💋
+  </p>
+
+  <div>
+    <button onclick="location.href='page5.html'">Next Page ➜</button>
+    <button onclick="location.href='page3.html'">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<45;i++){  // more hearts to fill longer page
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,50)+'px';
+  heart.innerText=emojis[randomInt(0,emojis.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  heart.style.top=randomInt(100,120)+'vh';
+}
+</script>
+
+</body>
+</html>
