@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Little Moments 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe6f0;}
+
+/* PAGE 5 */
+.page5{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffd9e8, #ffcce0);
+  overflow:hidden;
+  padding:40px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:20px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.4em;
+  line-height:1.9;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:12px 35px;
+  border:none;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+#response{
+  font-size:1.7em;
+  margin-top:20px;
+  color:#ff4d6d;
+  display:none;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page5">
+  <h1>Our Sweet Memories 🌸💖</h1>
+  <p>
+    I love thinking about all the little moments we share —  
+    the laughter, the late-night talks, the little surprises, and even the quiet moments where words weren’t needed.  
+    Every memory makes me smile and feel so lucky to have you.
+  </p>
+  <p>
+    Even though we can’t always be together, our thoughts, messages, and dreams keep us close.  
+    You make me feel loved every single day, and I hope I do the same for you too.
+  </p>
+
+  <!-- Cute Questions -->
+  <div>
+    <p>Which memory with me makes you happiest? 💖</p>
+    <button onclick="showAnswer('That time we laughed so hard together 😘💖')">Answer 💖</button>
+  </div>
+
+  <div>
+    <p>Do you think about me during the day? 😍</p>
+    <button onclick="showAnswer('Aww of course, all the time! 💖🌸')">Yes 💖</button>
+    <button onclick="showAnswer('Hmm maybe… 😏')">No 😏</button>
+  </div>
+
+  <div id="response"></div>
+
+  <div style="margin-top:40px;">
+    <button onclick="location.href='page6.html'">Next Page ➜</button>
+    <button onclick="location.href='page4.html'">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<35;i++){
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left
