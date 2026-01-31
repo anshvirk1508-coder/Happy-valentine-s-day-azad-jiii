@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Journey 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe6f0;}
+
+/* PAGE 2 */
+.page2{
+  width:100%;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffd1dc, #ffb3c6);
+  overflow:hidden;
+  padding:40px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:20px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.5em;
+  line-height:2;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:15px 40px;
+  border:none;
+  border-radius:35px;
+  font-size:20px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page2">
+  <h1>Our Sweet Journey 🌸💖</h1>
+  <p>
+    Every moment we spend together feels like a little world made just for us.  
+    From our silly jokes to our quiet talks, every second is a treasure I hold in my heart.  
+    You’ve turned ordinary days into magical adventures, and I find myself smiling at every thought of you.
+  </p>
+  <p>
+    I still remember the first time we laughed together — it was like the universe whispered, “these two belong together.”  
+    Every little thing you do, every word you say, every glance you give fills my heart with warmth.  
+    I could write a thousand stories, yet none would capture the love and joy you bring to my life.
+  </p>
+  <p>
+    The way you care, the way you listen, the way you make everything brighter — it’s all so special.  
+    I want to hold onto every memory, create endless new ones, and dream with you forever.  
+    You are my sunshine, my calm, my laughter, and my sweetest little obsession.
+  </p>
+  <p>
+    So here’s to us, to our little world, and to all the magic we share.  
+    Every heartbeat whispers your name, every thought carries your smile, and every dream is brighter because of you.  
+    You are my favorite everything, Azad 💖🌹✨💋
+  </p>
+  <div>
+    <button onclick="location.href='page3.html'">Next Page ➜</button>
+    <button onclick="location.href='index.html'">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts and kisses -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<35;i++){
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,45)+'px';
+  heart.innerText=emojis[randomInt(0,emojis.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  heart.style.top=randomInt(100,120)+'vh';
+}
+</script>
+
+</body>
+</html>
