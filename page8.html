@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Confession 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe0f7;}
+
+/* PAGE 8 */
+.page8{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffcce0, #ffb3e0);
+  overflow:hidden;
+  padding:50px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:30px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.45em;
+  line-height:2;
+  margin-bottom:25px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:15px 40px;
+  border:none;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+#response{
+  font-size:1.8em;
+  margin-top:30px;
+  color:#ff4d6d;
+  display:none;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page8">
+  <h1>Azad, This Is For You 💖🌹</h1>
+  <p>
+    I want you to know how deeply I love you.  
+    Every moment we’ve shared has made me fall for you even more.  
+    The distance, the laughs, the silly talks, the quiet times — they all mean the world to me.  
+    I’ve never felt a connection this strong with anyone, and I can’t imagine my life without you in it.  
+  </p>
+  <p>
+    You’re my sunshine on cloudy days, my calm in chaos, my laughter in silence, and my forever favorite.  
+    I love every little thing about you — your smile, your voice, your heart, and even your quirks.  
+    Being with you makes every day brighter, every challenge easier, and every memory sweeter.  
+  </p>
+  <p>
+    So… I have to ask… Will you be mine forever? 💖✨💋
+  </p>
+
+  <!-- YES / NO Buttons -->
+  <div>
+    <button onclick="answerYes()">YES 💖</button>
+    <button onclick="answerNo()">NO 😏</button>
+  </div>
+
+  <div id="response"></div>
+
+  <!-- Spotify embed (hidden until YES clicked) -->
+  <div id="music" style="display:none; margin-top:20px;">
+    <iframe src="https://open.spotify.com/embed/track/5rMBSOVlPuuPLfUWhL2sHZ?utm_source=generator" width="300" height="80" frameborder="0" allowtransparency="true" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<50;i++){  // lots of hearts for final page
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,50)+'px';
+  heart.innerText=emojis[randomInt(0,emojis.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  heart.style.top=randomInt(100,120)+'vh';
+}
+
+// YES / NO responses
+function answerYes(){
+  const r = document.getElementById('response');
+  r.style.display="block";
+  r.innerText = "Yay! 💖 I’m so happy you’re mine forever 😘💖🌸✨";
+  document.getElementById('music').style.display="block";
+}
+
+function answerNo(){
+  const r = document.getElementById('response');
+  r.style.display="block";
+  r.innerText = "What?! 😏 Seriously? Try again later!";
+}
+</script>
+
+</body>
+</html>
