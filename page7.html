@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Almost There 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe6f8;}
+
+/* PAGE 7 */
+.page7{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffcce0, #ffb3e0);
+  overflow:hidden;
+  padding:50px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:30px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.45em;
+  line-height:1.9;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:12px 35px;
+  border:none;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+#response{
+  font-size:1.7em;
+  margin-top:20px;
+  color:#ff4d6d;
+  display:none;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page7">
+  <h1>So Close to Magic 🌸💖</h1>
+  <p>
+    We’ve laughed, we’ve talked, we’ve shared our hearts across the distance.  
+    And now… it’s almost time for something super special.  
+    But before that, let me tease you a little 😏💖
+  </p>
+  <p>
+    I love how silly and cute we are together, how every little thing becomes a memory, and how every text from you makes me grin uncontrollably.  
+    Life feels brighter because of you, and I can’t wait for what’s coming next… 💕✨
+  </p>
+
+  <!-- Interactive Cute Questions -->
+  <div>
+    <p>Guess what I’m thinking right now? 💖</p>
+    <button onclick="showAnswer('Thinking about how much I love you 😘💖')">Guess 💖</button>
+  </div>
+
+  <div>
+    <p>Do you promise to always love me? 🌸</p>
+    <button onclick="showAnswer('Of course, forever and ever 💖✨')">Yes 💖</button>
+    <button onclick="showAnswer('Hmm… maybe 😏')">No 😏</button>
+  </div>
+
+  <div id="response"></div>
+
+  <div style="margin-top:40px;">
+    <button onclick="location.href='page8.html'">Next Page ➜</button>
+    <button onclick="location.href='page6.html'">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<45;i++){  // lots of floating emojis
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,50)+'px';
+  heart.innerText=emojis[randomInt(0,emojis.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  heart.style.top=randomInt(100,120)+'vh';
+}
+
+function showAnswer(text){
+  const r = document.getElementById('response');
+  r.style.display="block";
+  r.innerText = text;
+}
+</script>
+
+</body>
+</html>
