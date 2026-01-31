@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Long Distance 💖</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;overflow-x:hidden;cursor:none;background:#ffe0f7;}
+
+/* PAGE 3 */
+.page3{
+  width:100%;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  color:#333;
+  background: linear-gradient(120deg, #ffdee9, #ffd1f0);
+  overflow:hidden;
+  padding:40px;
+}
+
+h1{
+  font-size:3em;
+  margin-bottom:20px;
+  animation: floatText 4s ease-in-out infinite;
+}
+
+p{
+  font-size:1.5em;
+  line-height:2;
+  margin-bottom:20px;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+button{
+  margin:10px;
+  padding:12px 35px;
+  border:none;
+  border-radius:35px;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  background:white;
+  color:#ff4d6d;
+  transition: transform 0.2s;
+}
+button:hover{transform: scale(1.1);}
+
+#response{
+  font-size:1.8em;
+  margin-top:25px;
+  color:#ff4d6d;
+  display:none;
+  animation: floatText 6s ease-in-out infinite alternate;
+}
+
+/* Floating hearts/emojis */
+.heart{
+  position:absolute;
+  width:25px;
+  height:25px;
+  animation: floatUp linear infinite;
+  pointer-events:none;
+}
+
+@keyframes floatUp{
+  0% {transform: translateY(100vh) scale(1);}
+  50% {transform: translateY(50vh) scale(1.3);}
+  100% {transform: translateY(-50vh) scale(1);}
+}
+
+@keyframes floatText{
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+</style>
+</head>
+<body>
+
+<div class="page3">
+  <h1>Our Little Distance 💖✨</h1>
+  <p>
+    Even though miles keep us apart, our hearts are always together.  
+    Every message, every call, every thought of you makes me feel like you’re right here with me.  
+    Distance may test us, but it also proves how strong our bond truly is.
+  </p>
+  <p>
+    I thought it would be fun to ask you a little question… 💕
+  </p>
+
+  <!-- Cute Question -->
+  <div>
+    <p>Do you miss me? 😘</p>
+    <button onclick="answerYes()">Yes 💖</button>
+    <button onclick="answerNo()">No 😏</button>
+  </div>
+
+  <div id="response"></div>
+
+  <div style="margin-top:40px;">
+    <button onclick="location.href='page4.html'">Next Page ➜</button>
+    <button onclick="location.href='page2.html'">Back ⬅</button>
+  </div>
+</div>
+
+<!-- Floating hearts/emojis -->
+<script>
+function randomInt(min,max){return Math.floor(Math.random()*(max-min+1)+min);}
+const emojis=['❤️','💖','🌹','💕','✨','💋'];
+for(let i=0;i<35;i++){
+  const heart = document.createElement('div');
+  heart.classList.add('heart');
+  heart.style.left=randomInt(0,95)+'vw';
+  heart.style.fontSize=randomInt(25,45)+'px';
+  heart.innerText=emojis[randomInt(0,emojis.length-1)];
+  heart.style.animationDuration=(5+Math.random()*5)+'s';
+  document.body.appendChild(heart);
+  heart.style.top=randomInt(100,120)+'vh';
+}
+
+// Cute question responses
+function answerYes(){
+  const r = document.getElementById('response');
+  r.style.display="block";
+  r.innerText = "Aww I miss you too 😘💖 Can't wait to hug you!";
+}
+
+function answerNo(){
+  const r = document.getElementById('response');
+  r.style.display="block";
+  r.innerText = "What?! Are you serious? 😏 Try again!";
+}
+</script>
+
+</body>
+</html>
